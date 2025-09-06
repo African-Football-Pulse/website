@@ -26,20 +26,18 @@ function updateMuteButton(){
 }
 
 if (vid && muteToggle) {
-  // init (autoplay starts muted)
   vid.muted = true;
   updateMuteButton();
 
   muteToggle.addEventListener('click', async () => {
     try {
       vid.muted = !vid.muted;
-      await vid.play(); // keep it playing
+      await vid.play();
     } catch(e){ /* ignore */ }
     updateMuteButton();
   });
 }
 
-// Om man spelar themesången – tysta videon så de inte krockar
 if (theme && vid) {
   theme.addEventListener('play', () => {
     vid.muted = true;
