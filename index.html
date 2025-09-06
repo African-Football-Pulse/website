@@ -35,20 +35,20 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO: PORTRÄTTVIDEO + LOGGA SIDE-BY-SIDE -->
   <section class="hero hero-gradient">
     <div class="wrap hero-grid">
-      <!-- video -->
+      <!-- Vänster: video (9:16) -->
       <div class="hero-col center">
-        <div class="video-frame">
-          <video id="heroVideo" class="hero-video" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
+        <div class="video-frame-portrait">
+          <video id="heroVideo" class="hero-video-portrait" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
             <source src="media/ama-k.mp4" type="video/mp4" />
           </video>
           <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
         </div>
       </div>
 
-      <!-- logo -->
+      <!-- Höger: logga -->
       <div class="hero-col center">
         <img src="img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
       </div>
@@ -108,7 +108,7 @@
       <h3>Subscribe</h3>
       <p class="muted">Get new episodes in your inbox. We use Zoho—no spam, unsubscribe anytime.</p>
 
-      <!-- Mailto submit to Zoho inbox -->
+      <!-- Mailto till Zoho-inbox -->
       <form id="subscribeForm" class="row gap-sm">
         <input required name="email" id="subEmail" type="email" placeholder="you@example.com" class="input" />
         <button class="btn" type="submit">Subscribe</button>
