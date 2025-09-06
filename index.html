@@ -23,7 +23,7 @@
   <header class="site-header">
     <div class="wrap row between center">
       <a class="brand" href="/">
-        <img src="img/logo-afp.png" alt="AFP" height="28" />
+        <img src="img/logo-afp.png" alt="AFP" height="24" />
         <span>African Football Pulse</span>
       </a>
       <nav class="nav row">
@@ -35,19 +35,21 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO: video + logo side-by-side -->
   <section class="hero hero-gradient">
     <div class="wrap hero-grid">
-      <!-- video -->
-      <div class="hero-col">
-        <video class="hero-video" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
-          <source src="media/ama-k.mp4" type="video/mp4" />
-        </video>
-        <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
+      <!-- Left: video -->
+      <div class="hero-col video-col">
+        <div class="video-frame">
+          <video id="heroVideo" class="hero-video" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
+            <source src="media/ama-k.mp4" type="video/mp4" />
+          </video>
+          <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
+        </div>
       </div>
 
-      <!-- logo -->
-      <div class="hero-col center">
+      <!-- Right: big logo -->
+      <div class="hero-col logo-col">
         <img src="img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
       </div>
     </div>
@@ -98,18 +100,21 @@
         <a class="pill" href="#">Spotify</a>
         <a class="pill" href="#">X (Twitter)</a>
       </div>
-      <hr class="hr-afp"/>
+      <hr class="hr-afp" />
       <p class="muted note">Prefer WhatsApp drops? Coming soon.</p>
     </div>
 
     <div id="subscribe" class="card">
       <h3>Subscribe</h3>
       <p class="muted">Get new episodes in your inbox. We use Zoho—no spam, unsubscribe anytime.</p>
-      <form action="#" method="post" class="row gap-sm">
-        <input required name="email" type="email" placeholder="you@example.com" class="input" />
+
+      <!-- Mailto submit to Zoho inbox -->
+      <form id="subscribeForm" class="row gap-sm">
+        <input required name="email" id="subEmail" type="email" placeholder="you@example.com" class="input" />
         <button class="btn" type="submit">Subscribe</button>
       </form>
-      <div class="note">Swap the form action for your Zoho endpoint.</div>
+
+      <div class="note">Clicking subscribe sends an email to subscribe@africanfootball.com.</div>
     </div>
   </section>
 
@@ -121,16 +126,10 @@
   </section>
 
   <section id="contact" class="wrap">
-    <div class="card grid-2">
-      <div>
-        <h3>Contact</h3>
-        <p class="muted">General & Partnerships: <a href="mailto:contact@africanfootballpulse.com">contact@africanfootballpulse.com</a></p>
-        <p class="note">Zoho Mail powered.</p>
-      </div>
-      <div>
-        <h3>Colophon</h3>
-        <p class="muted">Static site on GitHub Pages. Add <code>feed.xml</code> for podcast apps, and keep episode audio in <code>/audio/</code>. Dark, accessible, minimal JS.</p>
-      </div>
+    <div class="card">
+      <h3>Contact</h3>
+      <p class="muted">General & Partnerships: <a href="mailto:contact@africanfootballpulse.com">contact@africanfootballpulse.com</a></p>
+      <p class="note">Zoho Mail powered.</p>
     </div>
   </section>
 
