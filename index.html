@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://africanfootballpulse.com/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="icon" type="image/png" href="img/logo-afp.png" />
   <link rel="preload" as="video" href="media/ama-k.mp4" />
   <link rel="stylesheet" href="css/afp.css" />
 </head>
@@ -23,7 +23,6 @@
   <header class="site-header">
     <div class="wrap row between center">
       <a class="brand" href="/">
-        <!-- liten logga i header -->
         <img src="img/logo-afp.png" alt="AFP" height="28" />
         <span>African Football Pulse</span>
       </a>
@@ -36,18 +35,24 @@
     </div>
   </header>
 
-  <!-- HERO: centrerad video + stor logga + toggle-knapp -->
+  <!-- HERO -->
   <section class="hero hero-gradient">
-    <div class="hero-media">
-      <video class="hero-video" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
-        <source src="media/ama-k.mp4" type="video/mp4" />
-      </video>
-      <!-- stor logga i hero -->
-      <img class="hero-mark" src="img/logo-afp.png" alt="African Football Pulse" />
-      <!-- toggle -->
-      <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
+    <div class="wrap hero-grid">
+      <!-- video -->
+      <div class="hero-col">
+        <video class="hero-video" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
+          <source src="media/ama-k.mp4" type="video/mp4" />
+        </video>
+        <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
+      </div>
+
+      <!-- logo -->
+      <div class="hero-col center">
+        <img src="img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
+      </div>
     </div>
 
+    <!-- Text under -->
     <div class="wrap hero-content">
       <span class="tag">Premier League • Daily • For African fans</span>
       <h1>Short, sharp football updates—built for your day.</h1>
