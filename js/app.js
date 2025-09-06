@@ -15,7 +15,7 @@ if (player && playBtn) {
 }
 
 // Video mute/unmute toggle + samspel med theme-audio
-const vid = document.querySelector('.hero-video');
+const vid = document.getElementById('heroVideo');
 const muteToggle = document.getElementById('muteToggle');
 const theme = document.getElementById('theme-audio');
 
@@ -24,23 +24,31 @@ function updateMuteButton(){
   muteToggle.textContent = vid.muted ? 'Unmute' : 'Mute';
   muteToggle.setAttribute('aria-label', vid.muted ? 'Unmute video' : 'Mute video');
 }
-
 if (vid && muteToggle) {
-  vid.muted = true;
+  vid.muted = true; // start muted for autoplay policy
   updateMuteButton();
-
   muteToggle.addEventListener('click', async () => {
     try {
       vid.muted = !vid.muted;
       await vid.play();
-    } catch(e){ /* ignore */ }
+    } catch(e){}
     updateMuteButton();
   });
 }
-
 if (theme && vid) {
-  theme.addEventListener('play', () => {
-    vid.muted = true;
-    updateMuteButton();
+  theme.addEventListener('play', () => { vid.muted = true; updateMuteButton(); });
+}
+
+// Subscribe form -> send mailto to Zoho inbox (static site friendly)
+const subForm = document.getElementById('subscribeForm');
+const subEmail = document.getElementById('subEmail');
+if (subForm && subEmail) {
+  subForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = subEmail.value.trim();
+    if (!email) return;
+    const subject = 'AFP newsletter subscribe';
+    const body = `email=${email}`;
+    window.location.href = `mailto:subscribe@africanfootball.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
