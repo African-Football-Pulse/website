@@ -23,7 +23,8 @@
   <header class="site-header">
     <div class="wrap row between center">
       <a class="brand" href="/">
-        <img src="img/logo.svg" alt="AFP" height="22" class="neon" />
+        <!-- stor svg-logga -->
+        <img src="img/logo-afp.svg" alt="AFP" height="28" class="neon" />
         <span>African Football Pulse</span>
       </a>
       <nav class="nav row">
@@ -35,14 +36,14 @@
     </div>
   </header>
 
-  <!-- HERO: autoplay video; centreras; Unmute-knapp för ljud -->
+  <!-- HERO -->
   <section class="hero hero-gradient">
     <video class="hero-video" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
       <source src="media/ama-k.mp4" type="video/mp4" />
     </video>
     <button id="unmute" class="unmute" aria-label="Unmute video audio">Unmute</button>
 
-    <div class="wrap">
+    <div class="wrap hero-content">
       <span class="tag">Premier League • Daily • For African fans</span>
       <h1>Short, sharp football updates—built for your day.</h1>
       <p class="muted">We turn the week’s noise into a 7-minute pulse: headlines, quick stats, and the one story that matters. English first—more languages soon.</p>
@@ -54,9 +55,8 @@
     </div>
   </section>
 
-  <!-- CONTENT ROW -->
+  <!-- CONTENT -->
   <section id="episodes" class="wrap grid-2">
-    <!-- Audio: Trailer -->
     <div class="card">
       <h3>Latest episode / Trailer</h3>
       <div class="audio">
@@ -70,7 +70,6 @@
       <div class="note">Podcast RSS will appear at <code>/feed.xml</code> when published.</div>
     </div>
 
-    <!-- Theme song (lokal mp3) -->
     <div class="card">
       <h3>AFP Theme – “Pulse of Africa”</h3>
       <p class="muted">Our show theme. Stream it here.</p>
@@ -96,7 +95,6 @@
     <div id="subscribe" class="card">
       <h3>Subscribe</h3>
       <p class="muted">Get new episodes in your inbox. We use Zoho—no spam, unsubscribe anytime.</p>
-      <!-- Replace action with your Zoho public form URL -->
       <form action="#" method="post" class="row gap-sm">
         <input required name="email" type="email" placeholder="you@example.com" class="input" />
         <button class="btn" type="submit">Subscribe</button>
