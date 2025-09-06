@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>African Football Pulse</title>
+<link>https://www.afp.example/</link>
+<description>Short, sharp football updates—built for your day.</description>
+<language>en</language>
+<lastBuildDate><!-- auto-fill via CI later --></lastBuildDate>
+
+
+<!-- Example item; duplicate and update per episode -->
+<item>
+<title>Trailer – Welcome to AFP</title>
+<description>A quick hello and what to expect.</description>
+<pubDate><!-- e.g., Mon, 08 Sep 2025 10:00:00 GMT --></pubDate>
+<enclosure url="https://www.afp.example/audio/latest.mp3" length="0" type="audio/mpeg"/>
+<guid isPermaLink="false">afp-trailer</guid>
+</item>
+</channel>
+</rss>
