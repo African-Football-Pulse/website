@@ -23,8 +23,8 @@
   <header class="site-header">
     <div class="wrap row between center">
       <a class="brand" href="/">
-        <!-- stor svg-logga -->
-        <img src="img/logo-afp.png" alt="AFP" height="64" />
+        <!-- liten logga i header -->
+        <img src="img/logo-afp.png" alt="AFP" height="28" />
         <span>African Football Pulse</span>
       </a>
       <nav class="nav row">
@@ -36,12 +36,17 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO: centrerad video + stor logga + toggle-knapp -->
   <section class="hero hero-gradient">
-    <video class="hero-video" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
-      <source src="media/ama-k.mp4" type="video/mp4" />
-    </video>
-    <button id="unmute" class="unmute" aria-label="Unmute video audio">Unmute</button>
+    <div class="hero-media">
+      <video class="hero-video" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
+        <source src="media/ama-k.mp4" type="video/mp4" />
+      </video>
+      <!-- stor logga i hero -->
+      <img class="hero-mark" src="img/logo-afp.png" alt="African Football Pulse" />
+      <!-- toggle -->
+      <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
+    </div>
 
     <div class="wrap hero-content">
       <span class="tag">Premier League • Daily • For African fans</span>
@@ -73,7 +78,7 @@
     <div class="card">
       <h3>AFP Theme – “Pulse of Africa”</h3>
       <p class="muted">Our show theme. Stream it here.</p>
-      <audio controls preload="metadata" class="full">
+      <audio id="theme-audio" controls preload="metadata" class="full">
         <source src="audio/afp-theme.mp3" type="audio/mpeg" />
       </audio>
     </div>
