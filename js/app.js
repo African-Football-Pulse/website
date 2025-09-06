@@ -14,17 +14,35 @@ if (player && playBtn) {
   });
 }
 
-// Unmute video on click (autoplay starts muted by policy)
+// Video mute/unmute toggle + samspel med theme-audio
 const vid = document.querySelector('.hero-video');
-const unmute = document.getElementById('unmute');
-if (vid && unmute) {
-  unmute.addEventListener('click', async () => {
+const muteToggle = document.getElementById('muteToggle');
+const theme = document.getElementById('theme-audio');
+
+function updateMuteButton(){
+  if (!muteToggle || !vid) return;
+  muteToggle.textContent = vid.muted ? 'Unmute' : 'Mute';
+  muteToggle.setAttribute('aria-label', vid.muted ? 'Unmute video' : 'Mute video');
+}
+
+if (vid && muteToggle) {
+  // init (autoplay starts muted)
+  vid.muted = true;
+  updateMuteButton();
+
+  muteToggle.addEventListener('click', async () => {
     try {
-      vid.muted = false;
-      await vid.play();
-      unmute.classList.add('hidden');
-    } catch (e) {
-      console.debug('Could not unmute autoplay video:', e);
-    }
+      vid.muted = !vid.muted;
+      await vid.play(); // keep it playing
+    } catch(e){ /* ignore */ }
+    updateMuteButton();
+  });
+}
+
+// Om man spelar themesången – tysta videon så de inte krockar
+if (theme && vid) {
+  theme.addEventListener('play', () => {
+    vid.muted = true;
+    updateMuteButton();
   });
 }
