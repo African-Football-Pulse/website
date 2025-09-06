@@ -24,12 +24,14 @@ a:hover{text-decoration:underline;text-underline-offset:2px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px;color:var(--ink)}
 .nav a{padding:10px 0}
 
-/* HERO grid */
-.hero{padding:32px 0}
+/* HERO */
+.hero{padding:28px 0}
 .hero-gradient{
-  background: radial-gradient(120% 80% at 8% 18%, rgba(0,211,141,.16), transparent 60%),
-              radial-gradient(120% 80% at 92% 42%, rgba(255,59,48,.12), transparent 60%);
+  background:
+    radial-gradient(120% 80% at 8% 18%, rgba(0,211,141,.16), transparent 60%),
+    radial-gradient(120% 80% at 92% 42%, rgba(255,59,48,.12), transparent 60%);
 }
+/* side-by-side grid */
 .hero-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -37,32 +39,39 @@ a:hover{text-decoration:underline;text-underline-offset:2px}
   align-items:center;
 }
 .hero-col{position:relative}
-.hero-col.center{display:flex;align-items:center;justify-content:center}
 
-/* video */
-.hero-video{
-  width:100%; height:auto;
-  border-radius:12px;
-  object-fit:cover;
+/* video container keeps aspect and centers content */
+.video-frame{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:14px;
+  overflow:hidden;
+  background:#0e131b;
+  position:relative;
 }
+.hero-video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:50% 50%; /* CENTRERAD */
+  filter:saturate(118%) contrast(108%);
+}
+/* mute/unmute toggle */
 .mute-toggle{
-  position:absolute; right:12px; bottom:12px;
+  position:absolute; right:12px; bottom:12px; z-index:2;
   background:linear-gradient(90deg,var(--afp-green),#22ffc5);
   color:#041012; font-weight:800; border:0; border-radius:999px;
   padding:8px 12px; box-shadow:0 6px 14px rgba(0,211,141,.3); cursor:pointer;
 }
-
-/* logo */
+.logo-col{display:flex;align-items:center;justify-content:center}
 .hero-logo{
   max-width:220px; height:auto;
   filter:drop-shadow(0 0 18px rgba(0,211,141,.45));
 }
 
-/* text under hero */
+/* hero text block under grid */
 .hero-content{margin-top:24px;padding:0 18px}
 
-/* responsivt */
-@media (max-width:768px){
+@media (max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:16px}
   .hero-logo{max-width:160px;margin:0 auto}
 }
