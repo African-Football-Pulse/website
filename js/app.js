@@ -14,7 +14,7 @@ if (player && playBtn) {
   });
 }
 
-// Video mute/unmute toggle + samspel med theme-audio
+// Video mute/unmute toggle
 const vid = document.getElementById('heroVideo');
 const muteToggle = document.getElementById('muteToggle');
 const theme = document.getElementById('theme-audio');
@@ -39,7 +39,7 @@ if (theme && vid) {
   theme.addEventListener('play', () => { vid.muted = true; updateMuteButton(); });
 }
 
-// Subscribe form -> send mailto to Zoho inbox (static site friendly)
+// Subscribe form -> send mailto to Zoho inbox
 const subForm = document.getElementById('subscribeForm');
 const subEmail = document.getElementById('subEmail');
 if (subForm && subEmail) {
