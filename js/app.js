@@ -14,7 +14,7 @@ if (player && playBtn) {
   });
 }
 
-// Video mute/unmute toggle
+// Video mute/unmute toggle + pausa ljudkrock
 const vid = document.getElementById('heroVideo');
 const muteToggle = document.getElementById('muteToggle');
 const theme = document.getElementById('theme-audio');
@@ -25,7 +25,7 @@ function updateMuteButton(){
   muteToggle.setAttribute('aria-label', vid.muted ? 'Unmute video' : 'Mute video');
 }
 if (vid && muteToggle) {
-  vid.muted = true; // start muted for autoplay policy
+  vid.muted = true; // autoplay policy
   updateMuteButton();
   muteToggle.addEventListener('click', async () => {
     try {
@@ -39,7 +39,7 @@ if (theme && vid) {
   theme.addEventListener('play', () => { vid.muted = true; updateMuteButton(); });
 }
 
-// Subscribe form -> send mailto to Zoho inbox
+// Subscribe form -> mailto till Zoho-inbox
 const subForm = document.getElementById('subscribeForm');
 const subEmail = document.getElementById('subEmail');
 if (subForm && subEmail) {
