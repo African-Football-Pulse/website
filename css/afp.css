@@ -102,3 +102,14 @@ audio.full{width:100%;margin-top:6px}
 .footer{border-top:1px solid #1f2835;margin-top:36px;padding:22px 18px 42px}
 .muted{color:#a2b1c8}
 .note{font-size:12px;color:#93a1b6}
+
+/* ---------- SPOTLIGHT ---------- */
+.spotlight .tight{margin:0}
+.spotlight-badge{
+  display:inline-block;
+  font-size:12px; text-transform:uppercase; letter-spacing:.12em;
+  padding:6px 10px; border-radius:999px;
+  background:rgba(0,211,141,.12); border:1px solid rgba(0,211,141,.35);
+  margin-right:8px; color:#b9f6e5;
+}
+.tag-sm{font-size:12px;padding:6px 10px;border:1px solid #2a3648;border-radius:999px;background:rgba(0,0,0,.25);color:#9fb0c8}
