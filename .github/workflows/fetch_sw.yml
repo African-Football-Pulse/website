@@ -18,10 +18,10 @@ jobs:
           python-version: "3.x"
 
       - name: Fetch Swahili podcast
-        run: python fetch_podcast_sw.py
+        run: python src/fetch_podcast_sw.py
 
       - name: Generate sitemap
-        run: python generate_sitemap.py
+        run: python src/generate_sitemap.py
 
       - name: Commit sitemap and episodes
         run: |
