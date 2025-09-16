@@ -172,3 +172,18 @@
   </script>
 </body>
 </html>
+
+<script>
+  const video = document.getElementById('heroVideo');
+  const muteToggle = document.getElementById('muteToggle');
+
+  muteToggle.addEventListener('click', () => {
+    if (video.muted) {
+      video.muted = false;
+      muteToggle.textContent = "Mute";
+    } else {
+      video.muted = true;
+      muteToggle.textContent = "Unmute";
+    }
+  });
+</script>
