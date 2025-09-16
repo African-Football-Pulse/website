@@ -1,10 +1,26 @@
 import feedparser
 from pathlib import Path
 import datetime
+import re
+import unicodedata
 
-# Buzzsprout RSS URL (byt ut mot din feed)
+# Buzzsprout RSS URL
 RSS_URL = "https://feeds.buzzsprout.com/2538204.rss"
 OUTPUT_DIR = Path("en/pod")
+
+def slugify(value: str) -> str:
+    """Convert string to SEO-friendly slug."""
+    # Normalisera unicode (é -> e)
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
+    # Lowercase
+    value = value.lower()
+    # Byt ut allt som inte är a-z0-9 mot -
+    value = re.sub(r"[^a-z0-9]+", "-", value)
+    # Trimma bindestreck
+    value = value.strip("-")
+    # Byt ut flera - i rad mot ett
+    value = re.sub(r"-{2,}", "-", value)
+    return value
 
 TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -84,12 +100,18 @@ def fetch_and_build():
 
     for entry in feed.entries:
         title = entry.title
-        slug = title.lower().replace(" ", "-")
+        guid = entry.get("guid", "")
+        guid_part = guid.split("-")[-1] if guid else ""
+        base_slug = slugify(title)
+
+        # Bygg slug: title + GUID (om finns)
+        slug = f"{base_slug}-{guid_part}" if guid_part else base_slug
+
         date = datetime.datetime(*entry.published_parsed[:6]).strftime("%Y-%m-%d")
-        description = entry.summary if hasattr(entry, "summary") else "Podcast episode"
+        description = entry.get("summary", "Podcast episode")
         audio_url = entry.enclosures[0].href if entry.enclosures else ""
 
-        # Build episode HTML
+        # Skapa episod HTML
         episode_html = TEMPLATE.format(
             title=title,
             description=description,
@@ -100,21 +122,24 @@ def fetch_and_build():
         file_path = OUTPUT_DIR / f"{slug}.html"
         file_path.write_text(episode_html, encoding="utf-8")
 
-        # Add link to index
+        # Lägg till i index
         index_items.append(f'<li><a href="{slug}.html">{title}</a> ({date})</li>')
 
-    # Update index.html with new list
+    # Uppdatera index.html
     index_file = OUTPUT_DIR / "index.html"
+    new_list = "<ul>\n" + "\n".join(index_items) + "\n</ul>"
+
     if index_file.exists():
         index_html = index_file.read_text(encoding="utf-8")
-        new_list = "<ul>\n" + "\n".join(index_items) + "\n</ul>"
-        index_html = index_html.replace(
-            "<ul>\n    <!-- Script kommer fylla på med länkar -->\n  </ul>",
-            new_list
-        )
+        if "<ul>" in index_html:
+            # Byt ut befintlig lista
+            index_html = re.sub(r"<ul>.*</ul>", new_list, index_html, flags=re.DOTALL)
+        else:
+            # Lägg till längst ner
+            index_html += "\n" + new_list
         index_file.write_text(index_html, encoding="utf-8")
     else:
-        # Create fallback index if missing
+        # Skapa fallback index
         fallback = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,9 +149,7 @@ def fetch_and_build():
 </head>
 <body>
   <h1>Podcast Episodes</h1>
-  <ul>
-    {"".join(index_items)}
-  </ul>
+  {new_list}
 </body>
 </html>
 """
