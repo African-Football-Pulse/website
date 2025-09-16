@@ -4,8 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>African Football Pulse (AFP)</title>
+
+  <!-- SEO -->
   <meta name="description" content="Short, sharp football updates for African fans. Premier League news, stats, and stories—fast." />
   <meta name="author" content="AFP" />
+  <meta name="keywords" content="African football, Premier League podcast, African players, football news, stats" />
+  <link rel="canonical" href="https://africanfootballpulse.com/" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="African Football Pulse (AFP)" />
@@ -14,6 +18,23 @@
   <meta property="og:image" content="img/og-image.jpg" />
   <meta property="og:url" content="https://africanfootballpulse.com/" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "African Football Pulse",
+    "url": "https://africanfootballpulse.com/",
+    "description": "Short, sharp football updates for African fans. Premier League news, stats, and stories—fast.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "African Football Pulse",
+      "url": "https://africanfootballpulse.com"
+    },
+    "inLanguage": "en"
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="img/logo-afp.png" />
   <link rel="preload" as="video" href="media/ama-k.mp4" />
@@ -38,7 +59,6 @@
   <!-- HERO: PORTRÄTTVIDEO + LOGGA SIDE-BY-SIDE -->
   <section class="hero hero-gradient">
     <div class="wrap hero-grid">
-      <!-- Vänster: video (9:16) -->
       <div class="hero-col center">
         <div class="video-frame-portrait">
           <video id="heroVideo" class="hero-video-portrait" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
@@ -47,14 +67,11 @@
           <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
         </div>
       </div>
-
-      <!-- Höger: logga -->
       <div class="hero-col center">
         <img src="img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
       </div>
     </div>
 
-    <!-- Text under -->
     <div class="wrap hero-content">
       <span class="tag">Premier League • Daily • For African fans</span>
       <h1>Short, sharp football updates—built for your day.</h1>
@@ -69,7 +86,6 @@
 
   <!-- SPOTLIGHTS -->
   <section id="spotlight" class="wrap grid-2">
-    <!-- Coach JJ Spotlight -->
     <div class="card spotlight">
       <div class="row center between">
         <h3 class="tight"><span class="spotlight-badge">Host Spotlight</span> Coach JJ</h3>
@@ -77,14 +93,12 @@
       </div>
       <p class="muted">Player focus: <strong>Taiwo Awoniyi</strong> — Nottingham Forest.</p>
       <audio id="spotlight-jj" controls preload="metadata" class="full">
-        <!-- Byt ev. filnamn om din uppladdning har annan ändelse -->
         <source src="audio/coach-jj-player-spotlight-taiwo-awoniyi.mp3" type="audio/mpeg" />
         <source src="audio/coach-jj-player-spotlight-taiwo-awoniyi.m4a" type="audio/mp4" />
         Your browser does not support the audio element.
       </audio>
     </div>
 
-    <!-- Next up -->
     <div class="card spotlight next">
       <h3 class="tight">Next spotlight — <strong>Ama K</strong></h3>
       <p class="muted">Our second host spotlight drops next. Don’t miss it — join the list below.</p>
@@ -116,6 +130,15 @@
     </div>
   </section>
 
+  <!-- NEW SECTION: LINK TO EPISODE LIST -->
+  <section class="wrap">
+    <div class="card">
+      <h3>Listen to all episodes</h3>
+      <p>Browse every African Football Pulse podcast episode in English.</p>
+      <a class="btn" href="/en/pod/">View Episodes</a>
+    </div>
+  </section>
+
   <section class="wrap grid-2">
     <div class="card">
       <h3>Follow us</h3>
@@ -132,13 +155,10 @@
     <div id="subscribe" class="card">
       <h3>Subscribe</h3>
       <p class="muted">Get new episodes in your inbox. We use Zoho—no spam, unsubscribe anytime.</p>
-
-      <!-- Mailto till Zoho-inbox -->
       <form id="subscribeForm" class="row gap-sm">
         <input required name="email" id="subEmail" type="email" placeholder="you@example.com" class="input" />
         <button class="btn" type="submit">Subscribe</button>
       </form>
-
       <div class="note">Clicking subscribe sends an email to subscribe@africanfootball.com.</div>
     </div>
   </section>
