@@ -37,10 +37,10 @@
   </script>
 
   <link rel="icon" type="image/png" href="img/logo-afp.png" />
-  <link rel="preload" as="video" href="media/ama-k.mp4" />
   <link rel="stylesheet" href="css/afp.css" />
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="wrap row between center">
       <a class="brand" href="/">
@@ -49,78 +49,47 @@
       </a>
       <nav class="nav row">
         <a href="#episodes">Episodes</a>
+        <a href="/listen.html">Listen</a>
         <a href="#about">About</a>
-        <a href="#subscribe">Subscribe</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO: PORTRÄTTVIDEO + LOGGA SIDE-BY-SIDE -->
+  <!-- HERO -->
   <section class="hero hero-gradient">
-    <div class="wrap hero-grid">
-      <div class="hero-col center">
-        <div class="video-frame-portrait">
-          <video id="heroVideo" class="hero-video-portrait" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
-            <source src="media/ama-k.mp4" type="video/mp4" />
-          </video>
-          <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
-        </div>
-      </div>
-      <div class="hero-col center">
-        <img src="img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
-      </div>
-    </div>
-
     <div class="wrap hero-content">
       <span class="tag">Premier League • Daily • For African fans</span>
       <h1>Short, sharp football updates—built for your day.</h1>
       <p class="muted">We turn the week’s noise into a 7-minute pulse: headlines, quick stats, and the one story that matters. English first—more languages soon.</p>
       <div class="row start gap-xl">
         <a class="btn" href="#episodes">Listen to the latest</a>
-        <span class="pill afp">🎧 New: <strong id="latest-date">—</strong></span>
-        <span class="pill flag">🇳🇬 🇬🇭 🇰🇪 🇿🇦 Audience first</span>
+        <a class="btn" href="/listen.html">All platforms & languages →</a>
       </div>
     </div>
   </section>
 
-  <!-- SPOTLIGHTS -->
-  <section id="spotlight" class="wrap grid-2">
-    <div class="card spotlight">
-      <div class="row center between">
-        <h3 class="tight"><span class="spotlight-badge">Host Spotlight</span> Coach JJ</h3>
-        <span class="tag tag-sm">New</span>
-      </div>
-      <p class="muted">Player focus: <strong>Taiwo Awoniyi</strong> — Nottingham Forest.</p>
-      <audio id="spotlight-jj" controls preload="metadata" class="full">
-        <source src="audio/coach-jj-player-spotlight-taiwo-awoniyi.mp3" type="audio/mpeg" />
-        <source src="audio/coach-jj-player-spotlight-taiwo-awoniyi.m4a" type="audio/mp4" />
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-
-    <div class="card spotlight next">
-      <h3 class="tight">Next spotlight — <strong>Ama K</strong></h3>
-      <p class="muted">Our second host spotlight drops next. Don’t miss it — join the list below.</p>
-      <a class="btn" href="#subscribe">Get the drop in your inbox</a>
-    </div>
-  </section>
-
-  <!-- CONTENT -->
+  <!-- EPISODES -->
   <section id="episodes" class="wrap grid-2">
+    <!-- Latest Episode -->
     <div class="card">
-      <h3>Latest episode / Trailer</h3>
-      <div class="audio">
-        <button id="audio-play" aria-label="Play/Pause">▶︎</button>
-        <div>
-          <div><strong id="ep-title">AFP – Trailer</strong></div>
-          <div class="muted" id="ep-desc">Hit play to hear the 60-sec intro. Full episodes will appear here once the feed is live.</div>
-        </div>
+      <h3>Latest Episode</h3>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/6ctAoXlZ3Bll0zUKCeM79n?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <div class="platform-icons" style="margin-top:0.5rem; display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <a class="pill" href="https://open.spotify.com/show/6ctAoXlZ3Bll0zUKCeM79n" target="_blank">Spotify</a>
+        <a class="pill" href="https://podcasts.apple.com/us/podcast/african-football-pulse/id1840231022" target="_blank">Apple Podcasts</a>
+        <a class="pill" href="https://afripods.com/podcast/african-football-pulse/african-football-pulse" target="_blank">Afripods</a>
+        <a class="pill" href="https://podcastindex.org/podcast/7488722" target="_blank">Podcast Index</a>
+        <a class="pill" href="https://podcastaddict.com/podcast/african-football-pulse/6095423" target="_blank">Podcast Addict</a>
+        <a class="pill" href="https://www.podchaser.com/podcasts/african-football-pulse-6214512" target="_blank">Podchaser</a>
+        <a class="pill" href="https://www.deezer.com/sv/show/1002206781" target="_blank">Deezer</a>
+        <a class="pill" href="https://player.fm/series/african-football-pulse" target="_blank">PlayerFM</a>
+        <a class="pill" href="https://www.buzzsprout.com/2538204" target="_blank">Buzzsprout</a>
       </div>
-      <audio id="player" src="audio/latest.mp3" preload="metadata" type="audio/mpeg"></audio>
-      <div class="note">Podcast RSS will appear at <code>/feed.xml</code> when published.</div>
     </div>
 
+    <!-- Theme music -->
     <div class="card">
       <h3>AFP Theme – “Pulse of Africa”</h3>
       <p class="muted">Our show theme. Stream it here.</p>
@@ -130,39 +99,16 @@
     </div>
   </section>
 
-  <!-- NEW SECTION: LINK TO EPISODE LIST -->
+  <!-- LISTEN CTA -->
   <section class="wrap">
-    <div class="card">
-      <h3>Listen to all episodes</h3>
-      <p>Browse every African Football Pulse podcast episode in English.</p>
-      <a class="btn" href="/en/pod/">View Episodes</a>
+    <div class="card center">
+      <h3>🌍 Want more?</h3>
+      <p class="muted">Listen on your favorite platform and in your language.</p>
+      <a class="btn" href="/listen.html">Go to Listen Page →</a>
     </div>
   </section>
 
-  <section class="wrap grid-2">
-    <div class="card">
-      <h3>Follow us</h3>
-      <p class="muted">We’re rolling out on YouTube, Spotify and X. Links land here once channels are live.</p>
-      <div class="grid-min">
-        <a class="pill" href="#">YouTube</a>
-        <a class="pill" href="#">Spotify</a>
-        <a class="pill" href="#">X (Twitter)</a>
-      </div>
-      <hr class="hr-afp" />
-      <p class="muted note">Prefer WhatsApp drops? Coming soon.</p>
-    </div>
-
-    <div id="subscribe" class="card">
-      <h3>Subscribe</h3>
-      <p class="muted">Get new episodes in your inbox. We use Zoho—no spam, unsubscribe anytime.</p>
-      <form id="subscribeForm" class="row gap-sm">
-        <input required name="email" id="subEmail" type="email" placeholder="you@example.com" class="input" />
-        <button class="btn" type="submit">Subscribe</button>
-      </form>
-      <div class="note">Clicking subscribe sends an email to subscribe@africanfootball.com.</div>
-    </div>
-  </section>
-
+  <!-- ABOUT -->
   <section id="about" class="wrap">
     <div class="card">
       <h3>What is AFP?</h3>
@@ -170,6 +116,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="wrap">
     <div class="card">
       <h3>Contact</h3>
@@ -178,6 +125,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="wrap footer">
     <div class="row between center">
       <div class="muted">© <span id="year"></span> African Football Pulse</div>
@@ -189,6 +137,8 @@
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
