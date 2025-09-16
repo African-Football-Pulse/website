@@ -23,10 +23,13 @@ jobs:
       - name: Run fetch script
         run: python scripts/fetch_podcast.py
 
+      - name: Generate sitemap
+        run: python scripts/generate_sitemap.py
+
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add en/pod/
-          git commit -m "Update English podcast episodes" || echo "No changes"
+          git add en/pod/ seo/sitemap.xml
+          git commit -m "Update English podcast episodes + sitemap" || echo "No changes"
           git push
