@@ -3,7 +3,10 @@ name: Fetch English Podcast
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 6 * * *"   # Kör varje dag kl 06:00 UTC
+    - cron: "0 6 * * *"   # kör varje dag kl 06:00 UTC
+
+permissions:
+  contents: write   # 👈 ger rättighet att pusha tillbaka
 
 jobs:
   fetch:
@@ -11,6 +14,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
