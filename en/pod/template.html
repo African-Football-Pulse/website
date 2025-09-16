@@ -1,1 +1,40 @@
-# Mall för enskild episod
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{title} | African Football Pulse</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="{description}">
+  <meta name="keywords" content="African football, Premier League, podcast, {title}">
+  <meta name="author" content="African Football Pulse">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{title} | African Football Pulse">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="https://africanfootballpulse.com/en/pod/{slug}.html">
+  <meta property="og:site_name" content="African Football Pulse">
+  <meta property="og:image" content="https://africanfootballpulse.com/assets/cover.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title} | African Football Pulse">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="https://africanfootballpulse.com/assets/cover.jpg">
+</head>
+<body>
+  <h1>{title}</h1>
+  <p><em>Published {date}</em></p>
+
+  <audio controls>
+    <source src="{audio_url}" type="audio/mpeg">
+  </audio>
+
+  <div>
+    <p>{description}</p>
+  </div>
+
+  <p><a href="../index.html">← Back to Episodes</a></p>
+</body>
+</html>
