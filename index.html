@@ -38,6 +38,22 @@
 
   <link rel="icon" type="image/png" href="img/logo-afp.png" />
   <link rel="stylesheet" href="css/afp.css" />
+  <style>
+    .platform-links a {
+      display: inline-block;
+      background: #222;
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+      text-decoration: none;
+      margin: 2px;
+      transition: background 0.2s;
+    }
+    .platform-links a:hover {
+      background: #444;
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -58,6 +74,20 @@
 
   <!-- HERO -->
   <section class="hero hero-gradient">
+    <div class="wrap hero-grid">
+      <div class="hero-col center">
+        <div class="video-frame-portrait">
+          <video id="heroVideo" class="hero-video-portrait" autoplay muted loop playsinline poster="img/ama-k.jpg" aria-label="AFP intro video">
+            <source src="media/ama-k.mp4" type="video/mp4" />
+          </video>
+          <button id="muteToggle" class="mute-toggle" aria-label="Unmute video">Unmute</button>
+        </div>
+      </div>
+      <div class="hero-col center">
+        <img src="img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
+      </div>
+    </div>
+
     <div class="wrap hero-content">
       <span class="tag">Premier League • Daily • For African fans</span>
       <h1>Short, sharp football updates—built for your day.</h1>
@@ -76,16 +106,16 @@
       <h3>Latest Episode</h3>
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/6ctAoXlZ3Bll0zUKCeM79n?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-      <div class="platform-icons" style="margin-top:0.5rem; display:flex; flex-wrap:wrap; gap:0.5rem;">
-        <a class="pill" href="https://open.spotify.com/show/6ctAoXlZ3Bll0zUKCeM79n" target="_blank">Spotify</a>
-        <a class="pill" href="https://podcasts.apple.com/us/podcast/african-football-pulse/id1840231022" target="_blank">Apple Podcasts</a>
-        <a class="pill" href="https://afripods.com/podcast/african-football-pulse/african-football-pulse" target="_blank">Afripods</a>
-        <a class="pill" href="https://podcastindex.org/podcast/7488722" target="_blank">Podcast Index</a>
-        <a class="pill" href="https://podcastaddict.com/podcast/african-football-pulse/6095423" target="_blank">Podcast Addict</a>
-        <a class="pill" href="https://www.podchaser.com/podcasts/african-football-pulse-6214512" target="_blank">Podchaser</a>
-        <a class="pill" href="https://www.deezer.com/sv/show/1002206781" target="_blank">Deezer</a>
-        <a class="pill" href="https://player.fm/series/african-football-pulse" target="_blank">PlayerFM</a>
-        <a class="pill" href="https://www.buzzsprout.com/2538204" target="_blank">Buzzsprout</a>
+      <div class="platform-links" style="margin-top:0.5rem;">
+        <a href="https://open.spotify.com/show/6ctAoXlZ3Bll0zUKCeM79n" target="_blank">Spotify</a>
+        <a href="https://podcasts.apple.com/us/podcast/african-football-pulse/id1840231022" target="_blank">Apple Podcasts</a>
+        <a href="https://afripods.com/podcast/african-football-pulse/african-football-pulse" target="_blank">Afripods</a>
+        <a href="https://podcastindex.org/podcast/7488722" target="_blank">Podcast Index</a>
+        <a href="https://podcastaddict.com/podcast/african-football-pulse/6095423" target="_blank">Podcast Addict</a>
+        <a href="https://www.podchaser.com/podcasts/african-football-pulse-6214512" target="_blank">Podchaser</a>
+        <a href="https://www.deezer.com/sv/show/1002206781" target="_blank">Deezer</a>
+        <a href="https://player.fm/series/african-football-pulse" target="_blank">PlayerFM</a>
+        <a href="https://www.buzzsprout.com/2538204" target="_blank">Buzzsprout</a>
       </div>
     </div>
 
@@ -99,7 +129,7 @@
     </div>
   </section>
 
-  <!-- LISTEN CTA -->
+  <!-- CTA to Listen page -->
   <section class="wrap">
     <div class="card center">
       <h3>🌍 Want more?</h3>
