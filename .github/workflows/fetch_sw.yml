@@ -1,32 +1,41 @@
-name: Fetch Swahili Podcast Episodes
+name: Fetch Swahili Podcast
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *" # kör var 6:e timme
+    - cron: "0 6 * * *"   # kör varje dag kl 06:00 UTC
+
+permissions:
+  contents: write   # 👈 behövs för att kunna pusha
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.10"
 
-      - name: Fetch Swahili podcast
-        run: python website/scripts/fetch_podcast_sw.py
+      - name: Install deps
+        run: pip install feedparser
+
+      - name: Run fetch script
+        run: python scripts/fetch_podcast_sw.py
 
       - name: Generate sitemap
-        run: python website/scripts/generate_sitemap.py
+        run: python scripts/generate_sitemap.py
 
-      - name: Commit sitemap and episodes
+      - name: Commit changes
         run: |
           git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add sw/pod/*.html seo/sitemap.xml
+          git config --global user.email "actions@github.com"
+          git add sw/pod/ seo/sitemap.xml
           git commit -m "Update Swahili podcast episodes + sitemap" || echo "No changes"
           git push
