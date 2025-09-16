@@ -3,7 +3,7 @@ from pathlib import Path
 import datetime
 
 # Buzzsprout RSS URL (byt ut mot din feed)
-RSS_URL = "https://feeds.buzzsprout.com/XXXX.rss"
+RSS_URL = "https://feeds.buzzsprout.com/2538204.rss"
 OUTPUT_DIR = Path("en/pod")
 
 TEMPLATE = """<!DOCTYPE html>
