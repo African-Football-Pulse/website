@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="sw">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>African Football Pulse</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap row between center">
+      <a class="brand" href="index.html">
+        <img src="../img/logo-afp.png" alt="AFP" height="28" />
+        <span>African Football Pulse</span>
+      </a>
+      <nav class="nav row">
+        <a href="index.html">Mwanzo</a>
+        <a href="pod.html">Podcasti</a>
+        <a href="annons.html">Matangazo</a>
+        <a href="samarbeta.html">Kushirikiana</a>
+        <a href="om.html">Kuhusu sisi</a>
+      </nav>
+      <select id="langSwitcher" class="lang-switch">
+        <option value="../en/index.html">EN</option>
+        <option value="../sv/index.html">SV</option>
+        <option value="../fr/index.html">FR</option>
+        <option value="../sw/index.html" selected>SW</option>
+        <option value="../ar/index.html">AR</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <img src="../img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
+        <h1>African Football Pulse</h1>
+        <p>Podcasti za dakika 7 na habari, takwimu na simulizi. Imejengwa kwa mashabiki wa Afrika wanaofuatilia soka la Ulaya.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="pod.html">🎧 Sikiliza sasa</a>
+          <a class="btn btn-secondary" href="annons.html">📊 Weka tangazo</a>
+          <a class="btn btn-primary" href="samarbeta.html">🤝 Kuwa mshirika</a>
+        </div>
+      </div>
+      <div>
+        <iframe style="border-radius:12px"
+          src="https://open.spotify.com/embed/show/6ctAoXlZ3Bll0zUKCeM79n?utm_source=generator"
+          width="100%" height="360" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>Kuhusu African Football Pulse</h2>
+    <p>African Football Pulse ni podcasti ya kila siku ya dakika 7 inayotoa vichwa vya habari, takwimu za haraka na simulizi kuu – imejengwa kwa mashabiki wa Afrika wanaofuatilia soka la Ulaya. Timu yetu ya sauti kutoka kote Afrika – waandishi wa habari, wachambuzi na wasimulizi – wanakupa masasisho makali na mitazamo inayounganisha mchezo na utamaduni, utambulisho na shauku.</p>
+  </section>
+
+  <footer class="wrap footer">
+    <div class="muted">© 2025 African Football Pulse</div>
+  </footer>
+
+  <script>
+    document.getElementById("langSwitcher").addEventListener("change", e => {
+      window.location.href = e.target.value;
+    });
+  </script>
+</body>
+</html>
