@@ -1,18 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>African Football Pulse V2 Preview</title>
+  <title>African Football Pulse</title>
   <meta name="robots" content="noindex" />
-
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      justify-items: center;
+    }
+    .hero-logo {
+      max-width: 220px;
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+    .icon {
+      width: 20px; height: 20px;
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="site-header">
     <div class="wrap row between center">
-      <a class="brand" href="/v2/">
+      <a class="brand" href="index.html">
         <img src="../img/logo-afp.png" alt="AFP" height="28" />
         <span>African Football Pulse</span>
       </a>
@@ -26,56 +56,38 @@
     </div>
   </header>
 
- <!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <h1>African Football Pulse</h1>
-    <p>7-minute podcasts with news, stats and stories.<br />
-       Built for African fans following European football.</p>
-
-    <div class="row center gap-xl" style="margin-top: 28px;">
-      <a class="btn btn-primary" href="pod.html">🎧 Lyssna nu</a>
-      <a class="btn btn-secondary" href="annons.html">📊 Boka annons</a>
-      <a class="btn btn-primary" href="samarbeta.html">🤝 Bli partner</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <img src="../img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
+        <h1>African Football Pulse</h1>
+        <p>7-minute podcasts with news, stats and stories.<br>
+        Built for African fans following European football.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-icon" href="pod.html">
+            <img class="icon" src="../img/play-icon.svg" alt="Lyssna" /> Lyssna nu
+          </a>
+          <a class="btn btn-secondary btn-icon" href="annons.html">
+            <img class="icon" src="../img/chart-icon.svg" alt="Annons" /> Boka annons
+          </a>
+          <a class="btn btn-primary btn-icon" href="samarbeta.html">
+            <img class="icon" src="../img/handshake-icon.svg" alt="Partner" /> Bli partner
+          </a>
+        </div>
+      </div>
+      <div>
+        <iframe style="border-radius:12px" 
+          src="https://open.spotify.com/embed/show/6ctAoXlZ3Bll0zUKCeM79n?utm_source=generator" 
+          width="100%" height="360" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy"></iframe>
+      </div>
     </div>
-
-    <!-- Ikonblock under knapparna -->
-    <div class="row center gap-xl" style="margin-top: 42px;">
-      <div class="icon-block">
-        <img src="../img/logo-afp.png" alt="Poddar" />
-        <p>Poddar & highlights<br/>Spotify, Apple, YouTube</p>
-      </div>
-      <div class="icon-block">
-        <img src="../img/placeholder.png" alt="Annons" />
-        <p>Annonsmöjligheter<br/>Statistik & räckvidd</p>
-      </div>
-      <div class="icon-block">
-        <img src="../img/placeholder.png" alt="Partner" />
-        <p>Samarbeten med<br/>klubbar & medier</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- LATEST EPISODE -->
-<section class="section alt">
-  <div class="wrap">
-    <h2>🎧 Senaste avsnitt</h2>
-    <iframe style="border-radius:12px" 
-      src="https://open.spotify.com/embed/show/6ctAoXlZ3Bll0zUKCeM79n?utm_source=generator" 
-      width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy"></iframe>
-  </div>
-</section>
-
+  </section>
 
   <!-- FOOTER -->
   <footer class="wrap footer">
-    <div class="row between center">
-      <div class="muted">© 2025 African Football Pulse</div>
-      <a class="muted" href="../seo/sitemap.xml">Sitemap</a>
-    </div>
+    <div class="muted">© 2025 African Football Pulse</div>
   </footer>
 </body>
 </html>
-
