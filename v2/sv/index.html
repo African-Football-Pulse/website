@@ -1,17 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>African Football Pulse</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
-    .hero-logo { max-width: 220px; margin: 0 auto 20px; display: block; }
-    .cta-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
-    .lang-switch { margin-left: 12px; }
-    .about { max-width: 800px; margin: 60px auto; text-align: center; }
-  </style>
 </head>
 <body>
   <header class="site-header">
@@ -21,15 +14,15 @@
         <span>African Football Pulse</span>
       </a>
       <nav class="nav row">
-        <a href="index.html">Home</a>
-        <a href="pod.html">Podcasts</a>
-        <a href="annons.html">Advertise</a>
-        <a href="samarbeta.html">Collaborate</a>
-        <a href="om.html">About us</a>
+        <a href="index.html">Start</a>
+        <a href="pod.html">Poddar</a>
+        <a href="annons.html">Annons</a>
+        <a href="samarbeta.html">Samarbeta</a>
+        <a href="om.html">Om oss</a>
       </nav>
       <select id="langSwitcher" class="lang-switch">
-        <option value="../en/index.html" selected>EN</option>
-        <option value="../sv/index.html">SV</option>
+        <option value="../en/index.html">EN</option>
+        <option value="../sv/index.html" selected>SV</option>
         <option value="../fr/index.html">FR</option>
         <option value="../sw/index.html">SW</option>
         <option value="../ar/index.html">AR</option>
@@ -42,13 +35,34 @@
       <div>
         <img src="../img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
         <h1>African Football Pulse</h1>
-        <p>7-minute podcasts with news, stats and stories. Built for African fans following European football.</p>
+        <p>7-minuters poddar med nyheter, statistik och stories. Byggd för afrikanska fans som följer europeisk fotboll.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="pod.html">🎧 Listen now</a>
-          <a class="btn btn-secondary" href="annons.html">📊 Book an ad</a>
-          <a class="btn btn-primary" href="samarbeta.html">🤝 Become a partner</a>
+          <a class="btn btn-primary" href="pod.html">🎧 Lyssna nu</a>
+          <a class="btn btn-secondary" href="annons.html">📊 Boka annons</a>
+          <a class="btn btn-primary" href="samarbeta.html">🤝 Bli partner</a>
         </div>
       </div>
       <div>
         <iframe style="border-radius:12px"
-          src="https://open.spotify.com/embed/show/6ctAoXlZ3Bll0zUKCeM79n?utm_so_
+          src="https://open.spotify.com/embed/show/6ctAoXlZ3Bll0zUKCeM79n?utm_source=generator"
+          width="100%" height="360" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>Om African Football Pulse</h2>
+    <p>African Football Pulse är en daglig 7-minuters podd som levererar rubriker, snabba siffror och den viktigaste storyn – byggd för afrikanska fans av europeisk fotboll. Vårt team av röster från hela Afrika – journalister, analytiker och berättare – ger dig skarpa uppdateringar och perspektiv som kopplar spelet till kultur, identitet och passion.</p>
+  </section>
+
+  <footer class="wrap footer">
+    <div class="muted">© 2025 African Football Pulse</div>
+  </footer>
+
+  <script>
+    document.getElementById("langSwitcher").addEventListener("change", e => {
+      window.location.href = e.target.value;
+    });
+  </script>
+</body>
+</html>
