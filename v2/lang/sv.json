@@ -15,3 +15,29 @@
   "about_title": "Om African Football Pulse",
   "about_text": "African Football Pulse är en daglig 7-minuters podd som levererar rubriker, snabba siffror och den viktigaste storyn – byggd för afrikanska fans av europeisk fotboll. Vårt team av röster från hela Afrika – journalister, analytiker och berättare – ger dig skarpa uppdateringar och perspektiv som kopplar spelet till kultur, identitet och passion."
 }
+{
+  "menu_start": "Start",
+  "menu_start_url": "sv/index.html",
+
+  "menu_pod": "Poddar",
+  "menu_pod_url": "sv/pod.html",
+
+  "menu_ad": "Annons",
+  "menu_ad_url": "sv/annons.html",
+
+  "menu_partner": "Samarbeta",
+  "menu_partner_url": "sv/samarbeta.html",
+
+  "menu_about": "Om oss",
+  "menu_about_url": "sv/om.html",
+
+  "hero_title": "African Football Pulse",
+  "hero_sub": "7-minuters poddar med nyheter, statistik och stories. Byggd för afrikanska fans som följer europeisk fotboll.",
+
+  "cta_listen": "🎧 Lyssna nu",
+  "cta_advertise": "📊 Boka annons",
+  "cta_partner": "🤝 Bli partner",
+
+  "about_title": "Om African Football Pulse",
+  "about_text": "African Football Pulse är en daglig 7-minuters podd..."
+}
