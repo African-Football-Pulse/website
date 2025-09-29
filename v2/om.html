@@ -6,6 +6,31 @@
   <title>Om oss – African Football Pulse</title>
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .video-frame-portrait {
+      position: relative;
+      width: min(40vw, 320px);
+      aspect-ratio: 9/16;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0e131b;
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+      margin: 0 auto 12px;
+    }
+    .hero-video-portrait {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+    .mute-toggle {
+      position: absolute; right: 10px; bottom: 10px; z-index: 2;
+      background: linear-gradient(90deg,var(--afp-green),#22ffc5);
+      color: #041012; font-weight: 700; border: 0; border-radius: 999px;
+      padding: 6px 12px; font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0,211,141,.3); cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -40,9 +65,10 @@
       <!-- Ama K -->
       <div class="card">
         <div class="video-frame-portrait">
-          <video autoplay muted loop playsinline poster="../img/ama-k.jpg">
-            <source src="../media/ama_k.mp4" type="video/mp4" />
+          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/ama-k.jpg">
+            <source src="../media/Presentation_Ama_K.mp4" type="video/mp4" />
           </video>
+          <button class="mute-toggle">Unmute</button>
         </div>
         <h3>Ama K (Amarachi Kwarteng)</h3>
         <p class="muted">Nairobi, Kenya · Språk: Engelska, Swahili</p>
@@ -52,9 +78,10 @@
       <!-- Coach JJ -->
       <div class="card">
         <div class="video-frame-portrait">
-          <video autoplay muted loop playsinline poster="../img/jj.jpg">
-            <source src="../media/jj.mp4" type="video/mp4" />
+          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/jj.jpg">
+            <source src="../media/Presentation_JJ.mp4" type="video/mp4" />
           </video>
+          <button class="mute-toggle">Unmute</button>
         </div>
         <h3>Coach JJ (Kwabena Kwabena)</h3>
         <p class="muted">Accra, Ghana · Språk: Engelska, Swahili</p>
@@ -64,9 +91,10 @@
       <!-- Karim -->
       <div class="card">
         <div class="video-frame-portrait">
-          <video autoplay muted loop playsinline poster="../img/karin.jpg">
-            <source src="../media/karin.mp4" type="video/mp4" />
+          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/karin.jpg">
+            <source src="../media/Presentation_Karim.mp4" type="video/mp4" />
           </video>
+          <button class="mute-toggle">Unmute</button>
         </div>
         <h3>Karim El Mansouri</h3>
         <p class="muted">Casablanca, Marocko · Språk: Engelska, Franska</p>
@@ -76,9 +104,10 @@
       <!-- Omar -->
       <div class="card">
         <div class="video-frame-portrait">
-          <video autoplay muted loop playsinline poster="../img/omar.jpg">
-            <source src="../media/omar.mp4" type="video/mp4" />
+          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/omar.jpg">
+            <source src="../media/Presentation_Omar.mp4" type="video/mp4" />
           </video>
+          <button class="mute-toggle">Unmute</button>
         </div>
         <h3>Omar El Sayed</h3>
         <p class="muted">Kairo, Egypten · Språk: Engelska, Arabiska</p>
@@ -92,5 +121,22 @@
   <footer class="wrap footer">
     <div class="muted">© 2025 African Football Pulse</div>
   </footer>
+
+  <!-- SCRIPT for mute/unmute -->
+  <script>
+    document.querySelectorAll('.video-frame-portrait').forEach(frame => {
+      const video = frame.querySelector('video');
+      const button = frame.querySelector('.mute-toggle');
+      button.addEventListener('click', () => {
+        if (video.muted) {
+          video.muted = false;
+          button.textContent = 'Mute';
+        } else {
+          video.muted = true;
+          button.textContent = 'Unmute';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
