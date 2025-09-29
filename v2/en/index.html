@@ -14,7 +14,6 @@
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header class="site-header">
     <div class="wrap row between center">
       <a class="brand" href="index.html">
@@ -22,20 +21,22 @@
         <span>African Football Pulse</span>
       </a>
       <nav class="nav row">
-        <a id="menu-start" href="index.html">Home</a>
-        <a id="menu-pod" href="pod.html">Podcasts</a>
-        <a id="menu-ad" href="annons.html">Advertise</a>
-        <a id="menu-partner" href="samarbeta.html">Collaborate</a>
-        <a id="menu-about" href="om.html">About us</a>
+        <a href="index.html">Home</a>
+        <a href="pod.html">Podcasts</a>
+        <a href="annons.html">Advertise</a>
+        <a href="samarbeta.html">Collaborate</a>
+        <a href="om.html">About us</a>
       </nav>
       <select id="langSwitcher" class="lang-switch">
-        <option value="en" selected>EN</option>
-        <option value="sv">SV</option>
+        <option value="../en/index.html" selected>EN</option>
+        <option value="../sv/index.html">SV</option>
+        <option value="../fr/index.html">FR</option>
+        <option value="../sw/index.html">SW</option>
+        <option value="../ar/index.html">AR</option>
       </select>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
@@ -58,25 +59,19 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about">
     <h2>About African Football Pulse</h2>
     <p>African Football Pulse is the daily 7-minute podcast that brings headlines, quick stats, and the one story that matters – built for African fans following European football. Our team of voices from across Africa – journalists, analysts, and storytellers – give you sharp updates and perspectives that connect the game to culture, identity, and passion.</p>
   </section>
 
-  <!-- FOOTER -->
   <footer class="wrap footer">
     <div class="muted">© 2025 African Football Pulse</div>
   </footer>
 
-  <!-- SWITCH LANG -->
   <script>
     document.getElementById("langSwitcher").addEventListener("change", e => {
-      if (e.target.value === "sv") {
-        window.location.href = "../sv/index.html";
-      }
+      window.location.href = e.target.value;
     });
   </script>
 </body>
 </html>
-
