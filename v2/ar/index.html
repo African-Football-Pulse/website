@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     body { direction: rtl; text-align: right; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .hero-logo { max-width: 220px; margin: 0 auto 20px; display: block; }
+    .cta-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+    .lang-switch { margin-right: 12px; }
+    .about { max-width: 800px; margin: 60px auto; text-align: center; }
+    nav.nav a { margin-left: 20px; margin-right: 0; }
   </style>
 </head>
 <body>
@@ -20,7 +26,7 @@
         <a href="index.html">الرئيسية</a>
         <a href="pod.html">البودكاست</a>
         <a href="annons.html">إعلان</a>
-        <a href="samarbeta.html">شراكة</a>
+        <a href="samarbeta.html">تعاون</a>
         <a href="om.html">معلومات عنا</a>
       </nav>
       <select id="langSwitcher" class="lang-switch">
@@ -38,24 +44,26 @@
       <div>
         <img src="../img/logo-afp.png" alt="African Football Pulse" class="hero-logo" />
         <h1>African Football Pulse</h1>
-        <p>بودكاست مدته 7 دقائق يتضمن الأخبار والإحصائيات والقصص. مصمم لعشاق كرة القدم الأفارقة الذين يتابعون كرة القدم الأوروبية.</p>
+        <p>بودكاست مدته 7 دقائق مع أخبار وإحصائيات وقصص. مصمم لعشاق كرة القدم الأفارقة الذين يتابعون كرة القدم الأوروبية.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="pod.html">🎧 استمع الآن</a>
-          <a class="btn btn-secondary" href="annons.html">📊 احجز إعلاناً</a>
-          <a class="btn btn-primary" href="samarbeta.html">🤝 كن شريكاً</a>
+          <a class="btn btn-secondary" href="annons.html">📊 احجز إعلانًا</a>
+          <a class="btn btn-primary" href="samarbeta.html">🤝 كن شريكًا</a>
         </div>
       </div>
       <div>
         <iframe style="border-radius:12px"
           src="https://open.spotify.com/embed/show/6ctAoXlZ3Bll0zUKCeM79n?utm_source=generator"
-          width="100%" height="360" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          width="100%" height="360" frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
       </div>
     </div>
   </section>
 
   <section class="about">
     <h2>حول African Football Pulse</h2>
-    <p>African Football Pulse هو بودكاست يومي مدته 7 دقائق يقدم العناوين الرئيسية، والإحصائيات السريعة، والقصة الأهم – مصمم لعشاق كرة القدم الأفارقة الذين يتابعون كرة القدم الأوروبية. فريقنا من الأصوات من جميع أنحاء أفريقيا – صحفيون، محللون ورواة قصص – يمنحك تحديثات حادة ومنظوراً يربط اللعبة بالثقافة والهوية والشغف.</p>
+    <p>African Football Pulse هو بودكاست يومي مدته 7 دقائق يقدم العناوين الرئيسية، والإحصائيات السريعة، والقصة الأهم – مصمم لعشاق كرة القدم الأفارقة الذين يتابعون كرة القدم الأوروبية. فريقنا من الأصوات من جميع أنحاء إفريقيا – صحفيون، محللون ورواة قصص – يمنحك تحديثات دقيقة ومنظورًا يربط اللعبة بالثقافة والهوية والشغف.</p>
   </section>
 
   <footer class="wrap footer">
