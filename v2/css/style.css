@@ -1,21 +1,143 @@
 @import url("../../css/afp.css");
 
-/* Justeringar för V2-preview */
-.hero h1 {
-  font-size: clamp(36px, 5vw, 60px);
-  margin-bottom: 12px;
-}
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  color: var(--muted);
-}
-.btn {
-  min-width: 140px;
-  text-align: center;
-}
-.nav a {
-  padding: 10px 16px;
-  font-weight: 600;
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3 {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px;
 }
 
+h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  border-left: 6px solid var(--afp-green);
+  padding-left: 12px;
+  margin-top: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+/* ---------- LAYOUT ---------- */
+.hero {
+  text-align: center;
+  padding: 60px 18px;
+  background: linear-gradient(160deg, #0b0f14 60%, #111a27 100%);
+}
+
+.hero h1 {
+  background: linear-gradient(90deg, var(--afp-green), var(--afp-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto 24px;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  min-width: 160px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform .1s ease, box-shadow .2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg,var(--afp-green),#22ffc5);
+  color: #041012;
+  box-shadow: 0 6px 16px rgba(0,211,141,.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(90deg,var(--afp-yellow),#ffe65c);
+  color: #041012;
+  box-shadow: 0 6px 16px rgba(247,208,0,.4);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- VISUAL ELEMENTS ---------- */
+.section {
+  padding: 60px 18px;
+}
+
+.section.alt {
+  background: #121821;
+  border-top: 1px solid #1f2835;
+  border-bottom: 1px solid #1f2835;
+}
+
+.card {
+  border: none;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  text-align: center;
+}
+
+.icon-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-block img {
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0 0 8px rgba(0,211,141,.35));
+}
+
+.icon-block p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ---------- NAVIGATION ---------- */
+.nav a {
+  padding: 12px 18px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: color .2s ease;
+}
+.nav a:hover {
+  color: var(--afp-green);
+}
+
+/* ---------- CONTRAST IMPROVEMENTS ---------- */
+body {
+  background: var(--bg2);
+  color: var(--ink);
+}
+
+footer {
+  border-top: 2px solid var(--afp-green);
+  margin-top: 60px;
+  padding: 24px 18px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
