@@ -3,8 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Annonsörer – African Football Pulse</title>
+  <title>Annonsmöjligheter – African Football Pulse</title>
+  <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* Stat Cards */
+    .stat-card {
+      text-align: center;
+      padding: 24px;
+      border-radius: 16px;
+      background: #141a22;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+
+    .stat-card h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0 0;
+      font-weight: 700;
+    }
+
+    .highlight-green { color: var(--afp-green); }
+    .highlight-yellow { color: var(--afp-yellow); }
+    .highlight-red { color: var(--afp-red); }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -14,17 +36,14 @@
         <img src="../img/logo-afp.png" alt="AFP" height="28" />
         <span>African Football Pulse</span>
       </a>
-
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-
       <nav class="nav row">
         <a href="index.html">Start</a>
         <a href="pod.html">Poddar</a>
-        <a href="annons.html" class="active">Annons</a>
+        <a href="annons.html">Annons</a>
         <a href="samarbeta.html">Samarbeta</a>
         <a href="om.html">Om oss</a>
       </nav>
-
       <select id="langSwitcher" class="lang-switch">
         <option value="../en/annons.html">EN</option>
         <option value="../sv/annons.html" selected>SV</option>
@@ -34,7 +53,6 @@
       </select>
     </div>
   </header>
-
 
   <!-- HERO -->
   <section class="hero">
@@ -47,25 +65,25 @@
   <!-- STATS -->
   <section class="section alt">
     <div class="wrap grid-2">
-      <div class="card">
+      <div class="card stat-card">
         <h2>🌍 Räckvidd</h2>
         <p class="muted">Lyssnare per månad</p>
-        <h1 style="color:var(--afp-green);">120K+</h1>
+        <h1 class="highlight-green">120K+</h1>
       </div>
-      <div class="card">
+      <div class="card stat-card">
         <h2>📱 Plattformar</h2>
         <p class="muted">Spotify, Apple, YouTube</p>
-        <h1 style="color:var(--afp-yellow);">8+</h1>
+        <h1 class="highlight-yellow">8+</h1>
       </div>
-      <div class="card">
+      <div class="card stat-card">
         <h2>🎯 Målgrupp</h2>
         <p class="muted">Ålder 18–34, urban</p>
-        <h1 style="color:var(--afp-red);">65%</h1>
+        <h1 class="highlight-red">65%</h1>
       </div>
-      <div class="card">
+      <div class="card stat-card">
         <h2>⚡ Snabbhet</h2>
         <p class="muted">Dagliga avsnitt</p>
-        <h1 style="color:var(--afp-green);">7 min</h1>
+        <h1 class="highlight-green">7 min</h1>
       </div>
     </div>
   </section>
@@ -112,7 +130,7 @@
   <footer class="wrap footer">
     <div class="muted">© 2025 African Football Pulse</div>
   </footer>
+
   <script src="../js/app.js"></script>
 </body>
 </html>
-
