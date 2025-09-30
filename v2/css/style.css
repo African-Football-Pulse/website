@@ -1,219 +1,65 @@
-/* ===== Reset & Base ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ================================
+   African Football Pulse Styles
+   ================================ */
 
+/* Reset & Base */
 body {
-  font-family: 'Inter', sans-serif;
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
   background: #0e131b;
   color: #fff;
   line-height: 1.6;
 }
 
+h1, h2, h3, h4 {
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
 a {
+  color: var(--afp-green, #00ff99);
   text-decoration: none;
-  color: inherit;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+a:hover {
+  text-decoration: underline;
 }
 
-/* ===== Layout helpers ===== */
 .wrap {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .row {
   display: flex;
-  gap: 16px;
+  align-items: center;
 }
 
-.row.between {
+.between {
   justify-content: space-between;
 }
 
-.row.center {
-  align-items: center;
-}
-
-/* ===== Header & Nav ===== */
-.site-header {
-  background: #0e131b;
-  padding: 12px 0;
-  border-bottom: 1px solid #222;
-  position: relative;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-nav.nav {
-  display: flex;
-  gap: 20px;
-}
-
-nav.nav a {
-  font-weight: 500;
-  color: #fff;
-}
-
-nav.nav a:hover {
-  color: var(--afp-green, #00ff99);
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* ===== Hero ===== */
-.hero {
-  padding: 60px 0;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.hero-logo {
-  max-width: 220px;
-  margin: 0 auto 20px;
-  display: block;
-}
-
-h1 {
-  font-size: 42px;
-  font-weight: 800;
-  margin-bottom: 16px;
-  background: linear-gradient(90deg, #00ff99, #ccff00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-p {
-  font-size: 18px;
-  color: #ddd;
-}
-
-.cta-row {
-  display: flex;
+.center {
   justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 24px;
 }
 
-.btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 700;
-  display: inline-block;
-  box-shadow: 0 4px 12px rgba(0,0,0,.3);
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, #00ff99, #22ffc5);
-  color: #041012;
-}
-
-.btn-secondary {
-  background: #ffcc00;
-  color: #041012;
-}
-
-/* ===== About ===== */
-.about {
-  max-width: 800px;
-  margin: 60px auto;
-  text-align: center;
-}
-
-.about h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.about p {
-  font-size: 18px;
-  color: #ccc;
-}
-
-/* ===== Footer ===== */
-.footer {
-  padding: 20px 0;
-  border-top: 1px solid #222;
-  margin-top: 40px;
-  text-align: center;
-}
-
-.footer .muted {
-  font-size: 14px;
-  color: #888;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr; /* stapla allt i kolumn */
-    text-align: center;
-  }
-
-  nav.nav {
-    display: none;
-    flex-direction: column;
-    background: #0e131b;
-    position: absolute;
-    top: 60px; left: 0; right: 0;
-    padding: 20px;
-    gap: 12px;
-  }
-
-  nav.nav.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .cta-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  p, .about p {
-    font-size: 16px;
-  }
-}
-
-
-/* --- NAVIGATION --- */
+/* ================================
+   Header & Navigation
+   ================================ */
 .site-header {
   background: #0e131b;
   padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
 }
 
 .site-header .brand {
@@ -222,7 +68,6 @@ p {
   gap: 8px;
   font-weight: 700;
   color: #fff;
-  text-decoration: none;
 }
 
 .site-header .brand img {
@@ -241,10 +86,9 @@ p {
 }
 
 .nav a:hover {
-  color: var(--afp-green);
+  color: var(--afp-green, #00ff99);
 }
 
-/* --- HAMBURGER BUTTON --- */
 .menu-toggle {
   display: none;
   background: none;
@@ -254,40 +98,134 @@ p {
   color: #fff;
 }
 
-/* --- MOBILE STYLING --- */
+.lang-switch {
+  margin-left: 12px;
+}
+
+/* ================================
+   Hero Section
+   ================================ */
+.hero {
+  padding: 60px 20px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-logo {
+  max-width: 220px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 999px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #00ff99, #22ffc5);
+  color: #041012;
+}
+
+.btn-secondary {
+  background: #ffcc00;
+  color: #041012;
+}
+
+/* ================================
+   About Section
+   ================================ */
+.about {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+/* ================================
+   Cards / Annons / Partner
+   ================================ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.card {
+  background: #141a24;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+}
+
+/* ================================
+   Footer
+   ================================ */
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  border-top: 1px solid #222;
+}
+
+/* ================================
+   Responsive
+   ================================ */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
+
   .nav {
     display: none;
     flex-direction: column;
+    background: #0e131b;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 20px;
     gap: 12px;
-    margin-top: 12px;
   }
+
   .nav.show {
     display: flex;
   }
-}
 
-/* ===== Mobile fix for hero section ===== */
-@media (max-width: 768px) {
   .hero-grid {
-    grid-template-columns: 1fr;   /* en kolumn */
+    grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .hero-grid > div {
-    text-align: center;           /* centrera innehållet */
+    text-align: center;
   }
 
   .hero-grid iframe {
-    width: 100%;                  /* fyller hela skärmen */
-    height: 300px;                 /* lite lägre höjd för mobil */
+    width: 100%;
+    height: 300px;
   }
 
   .cta-row {
-    flex-direction: column;        /* CTA-knappar staplas */
+    flex-direction: column;
     align-items: center;
   }
 }
