@@ -1,15 +1,17 @@
-// Toggle hamburger menu
+// app.js – AFP v2
+
 document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav.nav');
+  // Hamburger menu toggle
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector("nav.nav");
 
   if (menuToggle && nav) {
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('show');
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
     });
   }
 
-  // Language switch
+  // Language switcher
   const langSwitcher = document.getElementById("langSwitcher");
   if (langSwitcher) {
     langSwitcher.addEventListener("change", e => {
@@ -17,4 +19,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
