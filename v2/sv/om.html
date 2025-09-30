@@ -4,51 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Om oss – African Football Pulse</title>
-  <meta name="robots" content="noindex" />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .video-frame-portrait {
-      position: relative;
-      width: min(40vw, 320px);
-      aspect-ratio: 9/16;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #0e131b;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-      margin: 0 auto 12px;
-    }
-    .hero-video-portrait {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-    .mute-toggle {
-      position: absolute; right: 10px; bottom: 10px; z-index: 2;
-      background: linear-gradient(90deg,var(--afp-green),#22ffc5);
-      color: #041012; font-weight: 700; border: 0; border-radius: 999px;
-      padding: 6px 12px; font-size: 14px;
-      box-shadow: 0 4px 12px rgba(0,211,141,.3); cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <!-- HEADER -->
   <header class="site-header">
-    <div class="wrap row between center">
-      <a class="brand" href="index.html">
-        <img src="../img/logo-afp.png" alt="AFP" height="28" />
-        <span>African Football Pulse</span>
-      </a>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-      <nav class="nav row">
-        <a href="index.html">Start</a>
-        <a href="pod.html">Poddar</a>
-        <a href="annons.html">Annons</a>
-        <a href="samarbeta.html">Samarbeta</a>
-        <a href="om.html">Om oss</a>
-      </nav>
-    </div>
+    <a class="brand" href="index.html">
+      <img src="../img/logo-afp.png" alt="AFP" height="28" />
+      <span>African Football Pulse</span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav">
+      <a href="index.html">Start</a>
+      <a href="pod.html">Poddar</a>
+      <a href="annons.html">Annons</a>
+      <a href="samarbeta.html">Samarbeta</a>
+      <a href="om.html" class="active">Om oss</a>
+    </nav>
+    <select id="langSwitcher" class="lang-switch">
+      <option value="../en/om.html">EN</option>
+      <option value="../sv/om.html" selected>SV</option>
+      <option value="../fr/om.html">FR</option>
+      <option value="../sw/om.html">SW</option>
+      <option value="../ar/om.html">AR</option>
+    </select>
   </header>
 
   <!-- HERO -->
@@ -62,8 +41,6 @@
   <!-- TEAM GRID -->
   <section class="section">
     <div class="wrap grid-2">
-
-      <!-- Ama K -->
       <div class="card">
         <div class="video-frame-portrait">
           <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/ama-k.jpg">
@@ -76,7 +53,6 @@
         <p><em>"JJ, I knew you’d say that. You're so predictable."</em></p>
       </div>
 
-      <!-- Coach JJ -->
       <div class="card">
         <div class="video-frame-portrait">
           <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/jj.jpg">
@@ -89,56 +65,7 @@
         <p><em>"You see, that’s the problem with modern football..."</em></p>
       </div>
 
-      <!-- Karim -->
       <div class="card">
         <div class="video-frame-portrait">
-          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/karin.jpg">
-            <source src="../media/Presentation_Karim.mp4" type="video/mp4" />
-          </video>
-          <button class="mute-toggle">Unmute</button>
-        </div>
-        <h3>Karim El Mansouri</h3>
-        <p class="muted">Casablanca, Marocko · Språk: Engelska, Franska</p>
-        <p><em>"Hakimi showed us that dreams travel faster than borders."</em></p>
-      </div>
-
-      <!-- Omar -->
-      <div class="card">
-        <div class="video-frame-portrait">
-          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/omar.jpg">
-            <source src="../media/Presentation_Omar.mp4" type="video/mp4" />
-          </video>
-          <button class="mute-toggle">Unmute</button>
-        </div>
-        <h3>Omar El Sayed</h3>
-        <p class="muted">Kairo, Egypten · Språk: Engelska, Arabiska</p>
-        <p><em>"Ya habibi, that’s football – full of surprises!"</em></p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="wrap footer">
-    <div class="muted">© 2025 African Football Pulse</div>
-  </footer>
-
-  <!-- SCRIPT for mute/unmute -->
-  <script>
-    document.querySelectorAll('.video-frame-portrait').forEach(frame => {
-      const video = frame.querySelector('video');
-      const button = frame.querySelector('.mute-toggle');
-      button.addEventListener('click', () => {
-        if (video.muted) {
-          video.muted = false;
-          button.textContent = 'Mute';
-        } else {
-          video.muted = true;
-          button.textContent = 'Unmute';
-        }
-      });
-    });
-  </script>
-  <script src="../js/app.js"></script>
-</body>
-</html>
+          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../img/karim.jpg">
+            <source src="../media/Presentation_Karim.mp4" type="video
