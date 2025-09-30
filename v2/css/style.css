@@ -269,3 +269,25 @@ p {
     display: flex;
   }
 }
+
+/* ===== Mobile fix for hero section ===== */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;   /* en kolumn */
+    gap: 20px;
+  }
+
+  .hero-grid > div {
+    text-align: center;           /* centrera innehållet */
+  }
+
+  .hero-grid iframe {
+    width: 100%;                  /* fyller hela skärmen */
+    height: 300px;                 /* lite lägre höjd för mobil */
+  }
+
+  .cta-row {
+    flex-direction: column;        /* CTA-knappar staplas */
+    align-items: center;
+  }
+}
