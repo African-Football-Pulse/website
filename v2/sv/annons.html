@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Annonsörer – African Football Pulse</title>
-  <meta name="robots" content="noindex" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <!-- HEADER -->
@@ -15,16 +14,27 @@
         <img src="../img/logo-afp.png" alt="AFP" height="28" />
         <span>African Football Pulse</span>
       </a>
+
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
       <nav class="nav row">
         <a href="index.html">Start</a>
         <a href="pod.html">Poddar</a>
-        <a href="annons.html">Annons</a>
+        <a href="annons.html" class="active">Annons</a>
         <a href="samarbeta.html">Samarbeta</a>
         <a href="om.html">Om oss</a>
       </nav>
+
+      <select id="langSwitcher" class="lang-switch">
+        <option value="../en/annons.html">EN</option>
+        <option value="../sv/annons.html" selected>SV</option>
+        <option value="../fr/annons.html">FR</option>
+        <option value="../sw/annons.html">SW</option>
+        <option value="../ar/annons.html">AR</option>
+      </select>
     </div>
   </header>
+
 
   <!-- HERO -->
   <section class="hero">
