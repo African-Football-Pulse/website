@@ -6,9 +6,24 @@
   <title>African Football Pulse</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
-    .hero-logo { max-width: 220px; margin: 0 auto 20px; display: block; }
-    .cta-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+    .hero-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 32px; 
+      align-items: center; 
+    }
+    .hero-logo { 
+      max-width: 220px; 
+      margin: 0 auto 20px; 
+      display: block; 
+    }
+    .cta-row { 
+      display: flex; 
+      justify-content: center; 
+      gap: 16px; 
+      flex-wrap: wrap; 
+      margin-top: 24px; 
+    }
     .lang-switch { margin-left: 12px; }
     .about { max-width: 800px; margin: 60px auto; text-align: center; }
   </style>
@@ -20,6 +35,11 @@
         <img src="../img/logo-afp.png" alt="AFP" height="28" />
         <span>African Football Pulse</span>
       </a>
+
+      <!-- Hamburger button -->
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+
+      <!-- Navigation -->
       <nav class="nav row">
         <a href="index.html">Home</a>
         <a href="pod.html">Podcasts</a>
@@ -27,6 +47,8 @@
         <a href="samarbeta.html">Collaborate</a>
         <a href="om.html">About us</a>
       </nav>
+
+      <!-- Language Switch -->
       <select id="langSwitcher" class="lang-switch">
         <option value="../en/index.html" selected>EN</option>
         <option value="../sv/index.html">SV</option>
@@ -68,11 +90,7 @@
     <div class="muted">© 2025 African Football Pulse</div>
   </footer>
 
-  <script>
-    document.getElementById("langSwitcher").addEventListener("change", e => {
-      window.location.href = e.target.value;
-    });
-  </script>
+  <!-- JS for menu and language -->
   <script src="../js/app.js"></script>
 </body>
 </html>
