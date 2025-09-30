@@ -208,3 +208,64 @@ p {
     font-size: 16px;
   }
 }
+
+
+/* --- NAVIGATION --- */
+.site-header {
+  background: #0e131b;
+  padding: 12px 20px;
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-header .brand img {
+  height: 28px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--afp-green);
+}
+
+/* --- HAMBURGER BUTTON --- */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* --- MOBILE STYLING --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .nav.show {
+    display: flex;
+  }
+}
