@@ -248,6 +248,16 @@ a:hover {
 .highlight-yellow { color: #ffcc00; }
 .highlight-red    { color: #ff3366; }
 
+/* Stat Card Variants */
+.stat-card.green { background: linear-gradient(180deg, #00ff99, #006644); }
+.stat-card.yellow { background: linear-gradient(180deg, #ffcc00, #664d00); }
+.stat-card.red { background: linear-gradient(180deg, #ff3366, #660022); }
+.stat-card.blue { background: linear-gradient(180deg, #3399ff, #002266); }
+
+.stat-card h1, 
+.stat-card h2, 
+.stat-card p { color: #fff; }
+
 
 /* ================================
    Footer
