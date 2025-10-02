@@ -372,3 +372,26 @@ a:hover {
 .stat-green  { background: linear-gradient(180deg, #0e131b, #003322); }
 .stat-yellow { background: linear-gradient(180deg, #0e131b, #332b00); }
 .stat-red    { background: linear-gradient(180deg, #0e131b, #330011); }
+
+.mute-toggle {
+  position: absolute; 
+  right: 10px; 
+  bottom: 10px; 
+  z-index: 2;
+  background: linear-gradient(90deg, #00ff99, #22ffc5);
+  color: #041012; 
+  font-weight: 700; 
+  border: 0; 
+  border-radius: 999px;
+  padding: 6px 12px; 
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,211,141,.5);
+  opacity: 0.9;
+}
+
+.mute-toggle:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
