@@ -6,6 +6,65 @@
   <title>Om oss – African Football Pulse</title>
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* Grid fix */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    /* Video frames */
+    .video-frame-portrait {
+      position: relative;
+      width: min(40vw, 320px);
+      aspect-ratio: 9/16;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0e131b;
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+      margin: 0 auto 12px;
+    }
+
+    .video-frame-portrait img,
+    .video-frame-portrait video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .play-toggle {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px; height: 60px;
+      font-size: 28px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mute-toggle {
+      position: absolute; right: 10px; bottom: 10px; z-index: 2;
+      background: linear-gradient(90deg,#00ff99,#22ffc5);
+      color: #041012; font-weight: 700; border: 0; border-radius: 999px;
+      padding: 6px 12px; font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0,211,141,.3); cursor: pointer;
+      opacity: 0.9;
+    }
+
+    .mute-toggle:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -54,16 +113,13 @@
         <h3>Ama K (Amarachi Kwarteng)</h3>
         <p class="muted">Nairobi, Kenya · Språk: Engelska, Swahili</p>
         <p><em>"JJ, I knew you’d say that. You're so predictable."</em></p>
-
       </div>
 
       <!-- Coach JJ -->
       <div class="card team-card">
-        <div class="video-frame-portrait">
-          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../../img/jj.jpg">
-            <source src="../../media/Presentation_JJ.mp4" type="video/mp4" />
-          </video>
-          <button class="mute-toggle">Unmute</button>
+        <div class="video-frame-portrait" data-video="../../media/Presentation_JJ.mp4">
+          <img src="../../img/jj.jpg" alt="Coach JJ" />
+          <button class="play-toggle">▶</button>
         </div>
         <h3>Coach JJ (Kwabena Kwabena)</h3>
         <p class="muted">Accra, Ghana · Språk: Engelska, Swahili</p>
@@ -72,11 +128,9 @@
 
       <!-- Karim -->
       <div class="card team-card">
-        <div class="video-frame-portrait">
-          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../../img/karim.jpg">
-            <source src="../../media/Presentation_Karim.mp4" type="video/mp4" />
-          </video>
-          <button class="mute-toggle">Unmute</button>
+        <div class="video-frame-portrait" data-video="../../media/Presentation_Karim.mp4">
+          <img src="../../img/karin.jpg" alt="Karim" />
+          <button class="play-toggle">▶</button>
         </div>
         <h3>Karim El Mansouri</h3>
         <p class="muted">Casablanca, Marocko · Språk: Engelska, Franska</p>
@@ -85,11 +139,9 @@
 
       <!-- Omar -->
       <div class="card team-card">
-        <div class="video-frame-portrait">
-          <video class="hero-video-portrait" autoplay muted loop playsinline poster="../../img/omar.jpg">
-            <source src="../../media/Presentation_Omar.mp4" type="video/mp4" />
-          </video>
-          <button class="mute-toggle">Unmute</button>
+        <div class="video-frame-portrait" data-video="../../media/Presentation_Omar.mp4">
+          <img src="../../img/omar.jpg" alt="Omar" />
+          <button class="play-toggle">▶</button>
         </div>
         <h3>Omar El Sayed</h3>
         <p class="muted">Kairo, Egypten · Språk: Engelska, Arabiska</p>
@@ -104,6 +156,29 @@
     <div class="muted">© 2025 African Football Pulse</div>
   </footer>
 
+  <!-- JS -->
   <script src="../js/app.js"></script>
+  <script>
+    document.querySelectorAll(".video-frame-portrait").forEach(frame => {
+      const playBtn = frame.querySelector(".play-toggle");
+      const videoSrc = frame.dataset.video;
+      if (playBtn) {
+        playBtn.addEventListener("click", () => {
+          frame.innerHTML = `
+            <video class="hero-video-portrait" autoplay muted loop playsinline>
+              <source src="${videoSrc}" type="video/mp4" />
+            </video>
+            <button class="mute-toggle">Unmute</button>
+          `;
+          const video = frame.querySelector("video");
+          const muteBtn = frame.querySelector(".mute-toggle");
+          muteBtn.addEventListener("click", () => {
+            video.muted = !video.muted;
+            muteBtn.textContent = video.muted ? "Unmute" : "Mute";
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
