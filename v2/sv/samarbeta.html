@@ -5,6 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Samarbeta – African Football Pulse</title>
   <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* Partner cards */
+    .partner-card {
+      padding: 32px 24px;
+      border-radius: 16px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .partner-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+    }
+
+    .partner-card .icon-badge {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0 auto 16px;
+      color: #041012;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .partner-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+    .partner-card p {
+      font-size: 1rem;
+      opacity: 0.95;
+      line-height: 1.5;
+    }
+
+    /* Färger per kategori */
+    .partner-influencers { background: linear-gradient(135deg, #00ff99, #22ffc5); color: #041012; }
+    .partner-media       { background: linear-gradient(135deg, #ffcc00, #ffaa00); color: #041012; }
+    .partner-clubs       { background: linear-gradient(135deg, #0066ff, #22aaff); }
+    .partner-orgs        { background: linear-gradient(135deg, #9b51e0, #bb6bd9); }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -30,6 +76,7 @@
     </select>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
       <h1>Samarbeta med oss</h1>
@@ -37,30 +84,37 @@
     </div>
   </section>
 
+  <!-- PARTNER GRID -->
   <section class="section">
     <div class="wrap grid-2">
-      <div class="card">
-        <h3>🤝 Influencers</h3>
+      <div class="partner-card partner-influencers">
+        <div class="icon-badge">🤝</div>
+        <h3>Influencers</h3>
         <p>Bli en del av vår community och sprid AFP i dina kanaler.</p>
       </div>
-      <div class="card">
-        <h3>📺 Mediehus</h3>
+      <div class="partner-card partner-media">
+        <div class="icon-badge">📺</div>
+        <h3>Mediehus</h3>
         <p>Samarbeta kring innehåll, distribution eller sponsring.</p>
       </div>
-      <div class="card">
-        <h3>⚽ Klubbar</h3>
+      <div class="partner-card partner-clubs">
+        <div class="icon-badge">⚽</div>
+        <h3>Klubbar</h3>
         <p>Exponera dina spelare och nå fans i hela Afrika.</p>
       </div>
-      <div class="card">
-        <h3>🌍 Organisationer</h3>
+      <div class="partner-card partner-orgs">
+        <div class="icon-badge">🌍</div>
+        <h3>Organisationer</h3>
         <p>Använd vår plattform för kampanjer, CSR eller rekrytering.</p>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="wrap footer">
     <div class="muted">© 2025 African Football Pulse</div>
   </footer>
+
   <script src="../js/app.js"></script>
 </body>
 </html>
