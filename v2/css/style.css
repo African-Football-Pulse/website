@@ -417,3 +417,22 @@ a:hover {
   opacity: 1;
   transform: translateY(-2px);
 }
+
+/* Pill links (platform buttons) */
+.pill {
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 4px 6px 0 0;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  background: #1e293b; /* mörk bakgrund */
+  color: #fff; /* vit text */
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pill:hover {
+  background: #10b981; /* grön hover */
+  transform: translateY(-2px);
+}
