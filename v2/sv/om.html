@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="../css/style.css" />
 
-
+  <style>
     /* Video frames */
     .video-frame-portrait {
       position: relative;
@@ -17,7 +17,7 @@
       overflow: hidden;
       background: #0e131b;
       box-shadow: 0 10px 24px rgba(0,0,0,.35);
-      margin: 0 auto 12px;
+      margin: 0 auto 16px;
     }
 
     .video-frame-portrait img,
@@ -57,6 +57,13 @@
     .mute-toggle:hover {
       opacity: 1;
       transform: translateY(-2px);
+    }
+
+    /* Grid fix */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
     }
   </style>
 </head>
@@ -100,8 +107,8 @@
 
       <!-- Ama K -->
       <div class="card team-card">
-        <div class="video-frame-portrait" data-video="../../media/Presentation_Ama_K.mp4">
-          <img src="../../img/ama-k.jpg" alt="Ama K" />
+        <div class="video-frame-portrait" data-video="../media/Presentation_Ama_K.mp4">
+          <img src="../img/ama-k.jpg" alt="Ama K" />
           <button class="play-toggle">▶</button>
         </div>
         <h3>Ama K (Amarachi Kwarteng)</h3>
@@ -111,8 +118,8 @@
 
       <!-- Coach JJ -->
       <div class="card team-card">
-        <div class="video-frame-portrait" data-video="../../media/Presentation_JJ.mp4">
-          <img src="../../img/jj.jpg" alt="Coach JJ" />
+        <div class="video-frame-portrait" data-video="../media/Presentation_JJ.mp4">
+          <img src="../img/jj.jpg" alt="Coach JJ" />
           <button class="play-toggle">▶</button>
         </div>
         <h3>Coach JJ (Kwabena Kwabena)</h3>
@@ -122,8 +129,8 @@
 
       <!-- Karim -->
       <div class="card team-card">
-        <div class="video-frame-portrait" data-video="../../media/Presentation_Karim.mp4">
-          <img src="../../img/karin.jpg" alt="Karim" />
+        <div class="video-frame-portrait" data-video="../media/Presentation_Karim.mp4">
+          <img src="../img/karin.jpg" alt="Karim" />
           <button class="play-toggle">▶</button>
         </div>
         <h3>Karim El Mansouri</h3>
@@ -133,8 +140,8 @@
 
       <!-- Omar -->
       <div class="card team-card">
-        <div class="video-frame-portrait" data-video="../../media/Presentation_Omar.mp4">
-          <img src="../../img/omar.jpg" alt="Omar" />
+        <div class="video-frame-portrait" data-video="../media/Presentation_Omar.mp4">
+          <img src="../img/omar.jpg" alt="Omar" />
           <button class="play-toggle">▶</button>
         </div>
         <h3>Omar El Sayed</h3>
