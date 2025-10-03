@@ -212,53 +212,6 @@ a:hover {
   color: #aaa;
 }
 
-/* ================================
-   Stat Cards
-   ================================ */
-.stat-card {
-  text-align: center;
-  padding: 32px 24px;
-  border-radius: 16px;
-  background: #141a22;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.6);
-}
-
-.stat-card h2 {
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.stat-card p {
-  color: #aaa;
-  margin-bottom: 8px;
-}
-
-.stat-card h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.highlight-green  { color: #00ff99; }
-.highlight-yellow { color: #ffcc00; }
-.highlight-red    { color: #ff3366; }
-
-/* Stat Card Variants */
-.stat-card.green { background: linear-gradient(180deg, #00ff99, #006644); }
-.stat-card.yellow { background: linear-gradient(180deg, #ffcc00, #664d00); }
-.stat-card.red { background: linear-gradient(180deg, #ff3366, #660022); }
-.stat-card.blue { background: linear-gradient(180deg, #3399ff, #002266); }
-
-.stat-card h1, 
-.stat-card h2, 
-.stat-card p { color: #fff; }
-
 
 /* ================================
    Footer
