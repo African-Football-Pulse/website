@@ -389,3 +389,31 @@ a:hover {
   background: #10b981; /* grön hover */
   transform: translateY(-2px);
 }
+
+/* ==============================
+   Team Cards (Om oss)
+   ============================== */
+.team-card {
+  background: #141a22;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.6);
+}
+
+.team-card h3 {
+  margin: 8px 0 4px;
+  color: #fff;
+}
+
+.team-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
