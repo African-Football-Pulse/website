@@ -79,5 +79,16 @@ def fetch_and_build():
     print("[fetch] Updated index.html")
 
 if __name__ == "__main__":
-    TEMPLATE = open("scripts/template.html").read() if Path("scripts/template.html").exists() else ""
+    TEMPLATE_PATHS = [
+    Path("scripts/template.html"),
+    Path("en/pod/template.html")
+    ]
+    for path in TEMPLATE_PATHS:
+        if path.exists():
+            TEMPLATE = path.read_text(encoding="utf-8")
+            break
+    else:
+        raise FileNotFoundError("❌ Could not find template.html in expected locations")
+
+
     fetch_and_build()
