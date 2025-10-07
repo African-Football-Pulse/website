@@ -2,6 +2,15 @@ name: Fetch English Podcast
 
 on:
   workflow_dispatch:
+    inputs:
+      force_rebuild:
+        description: "Force rebuild all podcast pages?"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
   schedule:
     - cron: "0 6 * * *"   # kör varje dag kl 06:00 UTC
 
@@ -11,6 +20,8 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    env:
+      FORCE_REBUILD: ${{ github.event.inputs.force_rebuild || 'false' }}
 
     steps:
       - name: 🧩 Checkout repo
@@ -28,7 +39,9 @@ jobs:
         run: pip install --quiet feedparser
 
       - name: 🎧 Fetch podcast episodes (English)
-        run: python scripts/fetch_podcast.py
+        run: |
+          echo "FORCE_REBUILD=${FORCE_REBUILD}"
+          python scripts/fetch_podcast.py
 
       - name: 🗺️ Generate sitemap
         run: python scripts/generate_sitemap.py
