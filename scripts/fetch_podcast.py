@@ -14,7 +14,7 @@ OUTPUT_DIR = Path("en/pod")
 FORCE_REBUILD = os.getenv("FORCE_REBUILD", "false").lower() == "true"
 
 # -----------------------------------------------------
-# Helper functions
+# Helpers
 # -----------------------------------------------------
 def slugify(value: str) -> str:
     """Convert a string to an SEO-friendly slug."""
@@ -38,8 +38,17 @@ def load_template() -> str:
     print("❌ Could not find template.html in expected locations")
     sys.exit(1)
 
+def safe_format(template: str, **kwargs) -> str:
+    """Safely format template by escaping stray braces."""
+    # Escape all single braces not used as format placeholders
+    safe = template.replace("{", "{{").replace("}", "}}")
+    # Restore the placeholders we actually want to substitute
+    for key in kwargs.keys():
+        safe = safe.replace("{{" + key + "}}", "{" + key + "}")
+    return safe.format(**kwargs)
+
 # -----------------------------------------------------
-# Main logic
+# Main
 # -----------------------------------------------------
 def fetch_and_build():
     print(f"[fetch] Reading RSS feed from {RSS_URL}")
@@ -65,8 +74,9 @@ def fetch_and_build():
         file_path = OUTPUT_DIR / f"{slug}.html"
         exists = file_path.exists()
 
-        # Build episode HTML
-        episode_html = template.format(
+        # Build episode HTML safely
+        episode_html = safe_format(
+            template,
             title=title,
             description=description,
             audio_url=audio_url,
@@ -100,9 +110,7 @@ def fetch_and_build():
 <body><h1>Podcast Episodes</h1>{new_list}</body></html>"""
     index_file.write_text(index_html, encoding="utf-8")
 
-    # -----------------------------------------------------
     # Summary log
-    # -----------------------------------------------------
     print(f"[fetch] {len(feed.entries)} entries processed")
     if created:
         print(f"[fetch] Created {len(created)} new episode page(s):")
@@ -116,8 +124,6 @@ def fetch_and_build():
         print("[fetch] No new or rebuilt episodes")
     print("[fetch] Updated index.html")
 
-# -----------------------------------------------------
-# Entrypoint
 # -----------------------------------------------------
 if __name__ == "__main__":
     fetch_and_build()
